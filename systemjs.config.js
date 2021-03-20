@@ -2,18 +2,19 @@ System.config({
   paths: { npm: "/node_modules/" },
   map: {
     app: "dist/app",
-    "@angular/core": "npm:@angular/core/bundles/core.umd.js",
-    "@angular/common": "npm:@angular/common/bundles/common.umd.js",
-    "@angular/compiler": "npm:@angular/compiler/bundles/compiler.umd.js",
+    "@angular/core": "/node_modules/@angular/core/bundles/core.umd.js",
+    "@angular/common": "/node_modules/@angular/common/bundles/common.umd.js",
+    "@angular/compiler":
+      "/node_modules/@angular/compiler/bundles/compiler.umd.js",
     "@angular/platform-browser":
-      "npm:@angular/platform-browser/bundles/platform-browser.umd.js",
+      "/node_modules/@angular/platform-browser/bundles/platform-browser.umd.js",
     "@angular/platform-browser-dynamic":
-      "npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js",
-    "core-js": "npm:core-js",
-    "zone.js": "npm:zone.js",
-    rxjs: "npm:rxjs",
-    "rxjs-compat": "npm:rxjs-compat",
-    tslib: "npm:tslib/tslib.js",
+      "/node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js",
+    "core-js": "/node_modules/core-js",
+    "zone.js": "/node_modules/zone.js",
+    rxjs: "/node_modules/rxjs",
+    "rxjs-compat": "/node_modules/rxjs-compat",
+    tslib: "/node_modules/tslib/tslib.js",
   },
   packages: {
     "dist/app": {},
