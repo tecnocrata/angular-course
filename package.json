@@ -1,0 +1,28 @@
+{
+  "name": "angular-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "core-js": "^3.9.1",
+    "rxjs": "^6.6.6",
+    "zone.js": "^0.11.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tecnocrata/angular-course.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Enrique",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tecnocrata/angular-course/issues"
+  },
+  "homepage": "https://github.com/tecnocrata/angular-course#readme"
+}
