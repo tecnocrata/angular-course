@@ -24,7 +24,7 @@
 
 3. Execute installer script (Windows only)
 
-   Using Powershell script execute
+   Using Powershell script execute (it may contains errors)
 
    ```
    .\win.setup.ps1
