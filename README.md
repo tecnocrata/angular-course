@@ -27,5 +27,5 @@
    Using Powershell script execute
 
    ```
-   .\setup.ps1
+   .\win.setup.ps1
    ```
