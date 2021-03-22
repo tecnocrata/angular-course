@@ -1,4 +1,4 @@
-class Student {
+class DummyStudent {
   firstName: String;
   lastName: String;
   studentId: number;
