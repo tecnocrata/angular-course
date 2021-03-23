@@ -10,7 +10,7 @@ class Student extends Person {
     this.lastName = lastName;
   }
   getGrades() {
-    // some code
+    console.log(`${this.firstName} is at 9 grade`);
   }
 }
 
