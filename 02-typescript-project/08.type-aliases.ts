@@ -2,14 +2,23 @@
 //   description?: string;
 //   id?: number;
 //   url: string;
+//   [index: string]: any;
 // }
 
-// function filterByTerm(input: Array<Link>, searchTerm: string) {
+// // the new label
+// type Links = Array<Link>;
+// // the new label
+
+// function filterByTerm(
+//   input: Links,
+//   searchTerm: string,
+//   lookupKey: string = "url"
+// ): Links {
 //   if (!searchTerm) throw Error("searchTerm cannot be empty");
 //   if (!input.length) throw Error("input cannot be empty");
 //   const regex = new RegExp(searchTerm, "i");
 //   return input.filter(function (arrayElement) {
-//     return arrayElement.url.match(regex);
+//     return arrayElement[lookupKey].match(regex);
 //   });
 // }
 
@@ -17,9 +26,7 @@
 // const obj2: Link = { url: "string2" };
 // const obj3: Link = { url: "string3" };
 
-// const arrOfLinks: Array<Link> = [obj1, obj2, obj3];
+// const arrOfLinks: Links = [obj1, obj2, obj3];
 
-// const term: string = "java";
-
-// let result = filterByTerm(arrOfLinks, term);
-// console.log("result ", result);
+// let result = filterByTerm(arrOfLinks, "string3");
+// console.log(result);
