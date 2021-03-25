@@ -1,6 +1,9 @@
 class Person {
   firstName: String;
   lastName: String;
+  greeting() {
+    console.log("Hello");
+  }
 }
 
 class Student extends Person {
@@ -11,6 +14,7 @@ class Student extends Person {
   }
   getGrades() {
     console.log(`${this.firstName} is at 9 grade`);
+    //this.greeting()
   }
 }
 
