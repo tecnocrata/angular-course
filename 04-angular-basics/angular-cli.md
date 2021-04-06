@@ -11,3 +11,9 @@ ng new angular-blog
 ```
 npx @angular/cli@11 new angular-blog
 ```
+
+## Starting the app
+
+```
+[npx] ng serve [--open]
+```
