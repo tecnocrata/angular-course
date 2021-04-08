@@ -17,3 +17,9 @@ npx @angular/cli@11 new angular-blog
 ```
 [npx] ng serve [--open]
 ```
+
+### Creating directives
+
+```
+[npx] ng g d directives/my-directive
+```

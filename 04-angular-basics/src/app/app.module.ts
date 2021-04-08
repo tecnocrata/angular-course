@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UcbHighlightDirective } from './directives/ucb-highlight.directive';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, UcbHighlightDirective],
   imports: [BrowserModule, AppRoutingModule], //, FormsModule
   providers: [],
   bootstrap: [AppComponent],
