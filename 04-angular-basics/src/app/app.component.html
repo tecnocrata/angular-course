@@ -39,4 +39,26 @@
 <!-- <input type="text" [(ngModel)]="expression" placeholder="type a name">
 <p>Result {{result}}</p>
 <button (click)="calculate()">Press me</button> -->
+
+
+
+<!-- <ul>
+  <li *ngFor="let lugar of lugares">{{lugar.nombre}}</li>
+</ul> -->
+
+<!-- <ul>
+  <ng-container *ngFor="let persona of personas">
+    <li *ngIf="persona.edad >= 18">{{persona.nombre}}</li>
+  </ng-container>
+</ul> -->
+
+<!-- <ng-container *ngFor="let persona of personas; odd as esPar" [ngSwitch]="persona.porte">
+  <li [ngStyle]="{color : (persona.edad>=18)? 'blue': 'red'}">
+    {{persona.nombre}}-{{persona.edad}} años -
+    <span *ngSwitchCase="'alto'" [ngStyle]="{color: 'green'}">alto({{persona.estatura}} mts)</span>
+    <span *ngSwitchCase="'mediano'" [ngStyle]="{color: 'black'}">mediano({{persona.estatura}} mts)</span>
+    <span *ngSwitchCase="'pequeño'" [ngStyle]="{color: 'orange'}">pequeño({{persona.estatura}} mts)</span>
+  </li>
+</ng-container> -->
+
 <router-outlet></router-outlet>
