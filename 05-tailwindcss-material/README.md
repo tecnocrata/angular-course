@@ -12,7 +12,7 @@ Run `npm install postcss@latest autoprefixer@latest` to install postcss and auto
 
 ## Generate TailwindCSS Condifuration File
 
-Move to Angular root folder and Run `npm install -D tailwindcss`
+Move to Angular root folder and Run `npx tailwindcss init`
 
 It will create a minimal tailwind.config.js file at the root of your Angular project.
 
