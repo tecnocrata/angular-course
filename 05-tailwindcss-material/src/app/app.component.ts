@@ -1,5 +1,16 @@
 import { Component } from '@angular/core';
 
+interface BlogEntry {
+  id: string;
+  category: string;
+  date: string;
+  title: string;
+  summary: string;
+}
+
+interface BlogFullEntry extends BlogEntry {
+  content: string;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,104 +18,37 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-basics';
-
-  firstName = 'Enrique';
-
-  selectedValue = '';
-  animal = {
-    name: 'Lion',
-    image: './assets/images/lion.jpg',
-  };
-  htmlContent = 'The name is Bond <b>James Bond<b/>';
-  scriptContent = "<script>console.log('fire')</script>";
-  theme = {
-    color: 'indianred',
-    fontSize: '15px',
-    opacity: 0.7,
-  };
-  expression = '';
-  result = '0';
-
-  lugares: any = [
-    { nombre: 'Florería la gardenia' },
-    { nombre: 'Donas la pasadita' },
-    { nombre: 'Veterinaria huellas' },
-  ];
-
-  personas: any = [
-    { edad: 10, nombre: 'Suri' },
-    { edad: 28, nombre: 'Mónica' },
-    { edad: 18, nombre: 'Jennifer' },
-    { edad: 20, nombre: 'Shirley' },
-    { edad: 1, nombre: 'Bebé' },
-    { edad: 18, nombre: 'Juan' },
-  ];
-
-  historial: any = [
-    { estatura: 1.5, porte: 'pequeño', edad: 18, nombre: 'Kevin' },
-    { estatura: 1.8, porte: 'mediano', edad: 15, nombre: 'Lui' },
-    { estatura: 2.0, porte: 'alto', edad: 21, nombre: 'Karla' },
-    { estatura: 1.7, porte: 'mediano', edad: 14, nombre: 'Roman' },
-    { estatura: 2.2, porte: 'alto', edad: 25, nombre: 'Juan' },
-    { estatura: 1.4, porte: 'pequeño', edad: 28, nombre: 'pedro' },
-  ];
-
-  sitios: any = [
+  entries: BlogEntry[] = [
     {
-      plan: 'pagado',
-      cercania: 1,
-      distancia: 1,
-      active: true,
-      nombre: 'Florería la Gardenia',
+      id: '1',
+      category: 'Trivia',
+      date: '2/2/2021',
+      title: 'First Entry',
+      summary: 'This is my first entry on my virtual blog...',
     },
     {
-      plan: 'gratuito',
-      cercania: 1,
-      distancia: 1.8,
-      active: true,
-      nombre: 'Donas la pasadita',
+      id: '2',
+      category: 'Tech',
+      date: '3/2/2021',
+      title: 'Ngrok a perfect developer friend',
+      summary:
+        'You will love this tool, it is able to save you tons and tons of work.',
     },
     {
-      plan: 'gratuito',
-      cercania: 2,
-      distancia: 5,
-      active: true,
-      nombre: 'Veterinaria Huellitas Felices',
+      id: '3',
+      category: 'Trivia',
+      date: '5/3/2021',
+      title: 'Justice League: The longest movie that I ever seen',
+      summary:
+        'I have enjoyed this movie, has replaced totally the previous 2017 version on my mind.',
     },
     {
-      plan: 'gratuito',
-      cercania: 3,
-      distancia: 10,
-      active: false,
-      nombre: 'Sushi Suhiroll',
-    },
-    {
-      plan: 'pagado',
-      cercania: 3,
-      distancia: 35,
-      active: true,
-      nombre: 'Hotel la Gracia',
-    },
-    {
-      plan: 'gratuito',
-      cercania: 3,
-      distancia: 120,
-      active: false,
-      nombre: 'Zapatería el Clavo',
+      id: '4',
+      category: 'Tech',
+      date: '10/4/2021',
+      title: 'What identifier data type do you prefer? number vs guid?',
+      summary:
+        'There are many reasons for each of them, but we should focus on real-life production environment',
     },
   ];
-
-  public showName() {
-    //console.log(this.firstName);
-    this.firstName = 'Carlos';
-  }
-
-  convertToDate() {
-    const date = new Date();
-    return date.toLocaleDateString();
-  }
-
-  calculate() {
-    this.result = eval(this.expression);
-  }
 }
