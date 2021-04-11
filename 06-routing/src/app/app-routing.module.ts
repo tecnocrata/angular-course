@@ -1,10 +1,61 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
+import { AboutComponent } from './components/about/about.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: AppComponent,
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
+  },
+  // {
+  //   path: 'welcome',
+  //   component: LayoutHeaderFooterComponent,
+  //   children: [
+  //     {
+  //       path: '',
+  //       component: HomePageComponent, // Initial Page
+  //       canActivate: [AuthGuard],
+  //     },
+  //   ],
+  // },
+];
+
+// const routes: Routes = [
+//   {
+//     path: "landing",
+//     component: LayoutFooterComponent,
+//     children: [
+//       {
+//         path: "",
+//         component: LandingPageComponent, // Landing Page
+//       },
+//     ],
+//   },
+//   {
+//     path: "welcome",
+//     component: LayoutHeaderFooterComponent,
+//     children: [
+//       {
+//         path: "",
+//         component: HomePageComponent, // Initial Page
+//         canActivate: [AuthGuard],
+//       },
+//     ],
+//   },
+//   {
+//     path: "",
+//     redirectTo: "welcome",
+//     pathMatch: "full",
+//   },
+// ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
