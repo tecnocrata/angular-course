@@ -1,76 +1,51 @@
-<h2>Hello {{title}}</h2>
+<header class="border-b md:flex md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4">
 
-<!-- <input type="text" (ngModel)="firstName" placeholder="type a name">
-<button (click)="showName()">Press me</button> -->
+  <!-- Logo text or image -->
+  <div class="flex items-center justify-between mb-4 md:mb-0">
+    <h1 class="leading-none text-2xl text-grey-darkest">
+      <a class="no-underline text-grey-darkest hover:text-black" href="#">
+        My Personal Blog
+      </a>
+    </h1>
 
-<!-- <p> Score count: {{5 + 5}} </p> -->
+    <a class="text-black hover:text-orange md:hidden" href="#">
+      <i class="fa fa-2x fa-bars"></i>
+    </a>
+  </div>
+  <!-- END Logo text or image -->
 
-<!-- <p> {{ new  Date() }} </p> -->
+  <!-- Search field -->
+  <form class="mb-4 w-full md:mb-0 md:w-1/4">
+    <label class="hidden" for="search-form">Search</label>
+    <input class="bg-grey-lightest border-2 focus:border-orange p-2 rounded-lg shadow-inner w-full" placeholder="Search"
+      type="text">
+    <button class="hidden">Submit</button>
+  </form>
+  <!-- END Search field -->
 
-<!-- <p> {{ convertToDate() }} </p> -->
+  <!-- Global navigation -->
+  <nav>
+    <ul class="list-reset md:flex md:items-center">
+      <li class="md:ml-4">
+        <a class="block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0"
+          href="#">
+          History
+        </a>
+      </li>
+      <li class="md:ml-4">
+        <a class="border-t block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0"
+          href="#">
+          About
+        </a>
+      </li>
+      <li class="md:ml-4">
+        <a class="border-t block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0"
+          href="#">
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- END Global navigation -->
 
-<!-- <p> {{beverageInput.value}} </p>
-<select #beverageInput>
-  <option value="milo">Milo</option>
-  <option value="coke">Coke</option>
-  <option value="fanta">Fanta</option>
-</select> -->
-
-<!-- <p> {{selectedValue}} </p>
-
-<select [(ngModel)]="selectedValue">
-  <option value="milo">Milo</option>
-  <option value="coke">Coke</option>
-  <option value="fanta">Fanta</option>
-</select> -->
-
-<!-- <img [alt]="animal.name" [src]="animal.image" /> -->
-
-<!-- <img bind-alt="animal.name" bind-src="animal.image" /> -->
-
-<!-- <p [innerHTML]="htmlContent"></p> -->
-
-<!-- <p [innerHTML]="scriptContent"></p> -->
-
-<!-- <h1 [style.color]="theme.color" [style.font-size]="theme.fontSize" [style.opacity]="theme.opacity">It's valentines </h1> -->
-
-<!-- <h1 [ngStyle]="theme">It's valentines </h1> -->
-
-<!-- <input type="text" [(ngModel)]="expression" placeholder="type a expression">
-<p>Result {{result}}</p>
-<button (click)="calculate()">Press me</button> -->
-
-
-
-<!-- <ul>
-  <li *ngFor="let lugar of lugares">{{lugar.nombre}}</li>
-</ul> -->
-
-<!-- <ul>
-  <ng-container *ngFor="let persona of personas">
-    <li *ngIf="persona.edad >= 18">{{persona.nombre}}</li>
-  </ng-container>
-</ul> -->
-
-<!-- <ng-container *ngFor="let persona of personas; odd as esPar" [ngSwitch]="persona.porte">
-  <li [ngStyle]="{color : (persona.edad>=18)? 'blue': 'red'}">
-    {{persona.nombre}}-{{persona.edad}} años -
-    <span *ngSwitchCase="'alto'" [ngStyle]="{color: 'green'}">alto({{persona.estatura}} mts)</span>
-    <span *ngSwitchCase="'mediano'" [ngStyle]="{color: 'black'}">mediano({{persona.estatura}} mts)</span>
-    <span *ngSwitchCase="'pequeño'" [ngStyle]="{color: 'orange'}">pequeño({{persona.estatura}} mts)</span>
-  </li>
-</ng-container> -->
-
-<!-- <ng-container *ngFor="let lugar of sitios; let i = index" [ngSwitch]="lugar.cercania">
-  <a contar-clicks>
-    <li [ngStyle]="{color: (lugar.active) ? 'black' : 'gray'}" [ngClass]="{numero_par: (i+1) % 2 !== 0}"
-      [appUcbHighlight]="lugar.plan">
-      {{lugar.nombre}} -
-      <span *ngSwitchCase="1" [ngStyle]="{color: 'green'}">Muy Cercano</span>
-      <span *ngSwitchCase="2" [ngStyle]="{color: 'black'}">Cercano</span>
-      <span *ngSwitchCase="3" [ngStyle]="{color: 'red'}">Lejano</span>
-    </li>
-  </a>
-</ng-container> -->
-
-<router-outlet></router-outlet>
+</header>
