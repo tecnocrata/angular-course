@@ -8,7 +8,7 @@ import { UcbHighlightDirective } from './directives/ucb-highlight.directive';
 
 @NgModule({
   declarations: [AppComponent, UcbHighlightDirective],
-  imports: [BrowserModule, AppRoutingModule], //, FormsModule
+  imports: [BrowserModule, AppRoutingModule, FormsModule], //
   providers: [],
   bootstrap: [AppComponent],
 })
