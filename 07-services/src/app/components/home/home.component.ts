@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogEntry } from 'src/app/models/blog-entry.model';
 import { BlogEntriesService } from 'src/app/services/blog-entries.service';
 
 @Component({
@@ -7,9 +8,10 @@ import { BlogEntriesService } from 'src/app/services/blog-entries.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  // entries: BlogEntry[] =null
-  entries = null;
+  entries: BlogEntry[] = [];
   constructor(private blogEntries: BlogEntriesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.entries = this.blogEntries.getAllEntries();
+  }
 }

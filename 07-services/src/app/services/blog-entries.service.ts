@@ -1,16 +1,5 @@
 import { Injectable } from '@angular/core';
-
-interface BlogEntry {
-  id: string;
-  category: string;
-  date: string;
-  title: string;
-  summary: string;
-}
-
-interface BlogFullEntry extends BlogEntry {
-  content: string;
-}
+import { BlogEntry } from '../models/blog-entry.model';
 
 @Injectable({
   providedIn: 'root',
