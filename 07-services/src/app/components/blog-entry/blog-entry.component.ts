@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-entry',
@@ -7,7 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./blog-entry.component.css'],
 })
 export class BlogEntryComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    const id = this.activatedRoute.snapshot.params['id'];
+    console.log('This is the ID blog entry', id);
+  }
 
   ngOnInit(): void {}
 

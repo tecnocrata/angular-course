@@ -19,7 +19,7 @@ const routes: Routes = [
     component: AboutComponent,
   },
   {
-    path: 'blogEntry',
+    path: 'blogEntry/:id',
     component: BlogEntryComponent,
   },
   // {
