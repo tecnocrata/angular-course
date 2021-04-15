@@ -43,4 +43,12 @@ export class BlogEntriesService {
   public getAllEntries() {
     return this.entries;
   }
+
+  public getEntry(id: string): { title: string; content: string } {
+    let { title, summary } = this.entries.filter((b) => b.id === id)[0];
+    return { title, content: summary };
+    // let entry = this.entries.find((b) => b.id === id);
+    // if (entry) return { title: entry.title, content: entry.summary };
+    // throw new Error("Entry doesn't exists");
+  }
 }
