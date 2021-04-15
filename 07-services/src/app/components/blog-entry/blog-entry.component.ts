@@ -16,6 +16,7 @@ export class BlogEntryComponent implements OnInit {
     private blogEntry: BlogEntriesService
   ) {
     this.id = this.activatedRoute.snapshot.params['id'];
+    console.log(this.activatedRoute.snapshot.queryParams['showImage']);
     this.entry = { title: '', content: '' };
     console.log('This is the ID blog entry', this.id);
   }
