@@ -1,0 +1,7 @@
+{
+  "/*/_search?*=:searchstring": "/$1/?$2_like=:searchstring",
+  "/*": "/$1",
+  "/api/entries": "/blog-entries",
+  "/api/entries/:id": "/blog-entries/:id",
+  "/api/entries?id=:id": "/blog-entries/:id"
+}
