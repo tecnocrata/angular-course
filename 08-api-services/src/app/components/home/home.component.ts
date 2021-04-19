@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { BlogEntry } from 'src/app/models/blog-entry.model';
 import { BlogEntriesService } from 'src/app/services/blog-entries.service';
@@ -12,6 +12,7 @@ import { BlogEntriesService } from 'src/app/services/blog-entries.service';
 export class HomeComponent implements OnInit, OnDestroy {
   entries: BlogEntry[] = [];
   private subscriptions = new Subscription();
+  public entries$!: Observable<BlogEntry[]>;
   constructor(private blogEntries: BlogEntriesService) {}
 
   ngOnInit(): void {
@@ -26,10 +27,13 @@ export class HomeComponent implements OnInit, OnDestroy {
     //   .subscribe((e) => (this.entries = e));
 
     // Better
-    const subscription = this.blogEntries
-      .getAllEntries()
-      .subscribe((e) => (this.entries = e));
-    this.subscriptions.add(subscription);
+    // const subscription = this.blogEntries
+    //   .getAllEntries()
+    //   .subscribe((e) => (this.entries = e));
+    // this.subscriptions.add(subscription);
+
+    // Much better method
+    this.entries$ = this.blogEntries.getAllEntries();
   }
 
   ngOnDestroy(): void {
