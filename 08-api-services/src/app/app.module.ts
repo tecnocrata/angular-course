@@ -8,10 +8,17 @@ import { UcbHighlightDirective } from './directives/ucb-highlight.directive';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { BlogEntryComponent } from './components/blog-entry/blog-entry.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, UcbHighlightDirective, AboutComponent, HomeComponent, BlogEntryComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule], //
+  declarations: [
+    AppComponent,
+    UcbHighlightDirective,
+    AboutComponent,
+    HomeComponent,
+    BlogEntryComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule], //
   providers: [],
   bootstrap: [AppComponent],
 })
