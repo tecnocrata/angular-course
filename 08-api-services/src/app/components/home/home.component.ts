@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { BlogEntry } from 'src/app/models/blog-entry.model';
@@ -13,7 +14,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   entries: BlogEntry[] = [];
   private subscriptions = new Subscription();
   public entries$!: Observable<BlogEntry[]>;
-  constructor(private blogEntries: BlogEntriesService) {}
+  constructor(
+    private router: Router,
+    private blogEntries: BlogEntriesService
+  ) {}
 
   ngOnInit(): void {
     // this.entries = this.blogEntries.getAllEntries();
@@ -34,6 +38,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     // Much better method
     this.entries$ = this.blogEntries.getAllEntries();
+  }
+
+  public createEntry() {
+    this.router.navigate(['/blogEntry/new']);
   }
 
   ngOnDestroy(): void {
