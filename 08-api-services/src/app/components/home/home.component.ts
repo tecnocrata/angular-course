@@ -12,6 +12,6 @@ export class HomeComponent implements OnInit {
   constructor(private blogEntries: BlogEntriesService) {}
 
   ngOnInit(): void {
-    this.entries = this.blogEntries.getAllEntries();
+    // this.entries = this.blogEntries.getAllEntries();
   }
 }

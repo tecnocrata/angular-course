@@ -22,7 +22,7 @@ export class BlogEntryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.entry = this.blogEntry.getEntry(this.id);
+    // this.entry = this.blogEntry.getEntry(this.id);
   }
 
   goBack() {
