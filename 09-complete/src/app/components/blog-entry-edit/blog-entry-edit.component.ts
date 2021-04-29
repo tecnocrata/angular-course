@@ -11,14 +11,16 @@ import { BlogEntriesService } from 'src/app/services/blog-entries.service';
 export class BlogEntryEditComponent implements OnInit {
   entry!: BlogEntry;
   id: string = '';
+  private mode: 'edit' | 'new' = 'new';
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private blogEntryService: BlogEntriesService
-  ) {
-    // this.id = this.activatedRoute.snapshot.params['id'];
-    // console.log(this.activatedRoute.snapshot.queryParams['showImage']);
-    // console.log('This is the ID blog entry', this.id);
+  ) {}
+
+  ngOnInit(): void {
+    this.id = this.activatedRoute.snapshot.params['id'];
+    this.mode = 'new';
     this.entry = {
       id: '',
       category: '',
@@ -27,13 +29,23 @@ export class BlogEntryEditComponent implements OnInit {
       summary: '',
       content: '',
     };
+    if (this.id) {
+      this.mode = 'edit';
+      this.blogEntryService.getEntry(this.id).subscribe((e) => {
+        this.entry = e;
+      });
+    }
   }
 
-  ngOnInit(): void {}
-
   saveEntry() {
-    this.blogEntryService.postEntry(this.entry).subscribe((r) => {
-      console.log(this.entry);
-    });
+    if (this.mode === 'new') {
+      this.blogEntryService.postEntry(this.entry).subscribe((r) => {
+        console.log(this.entry);
+      });
+    } else {
+      // this.blogEntryService.putEntry(this.entry).subscribe((r) => {
+      //   console.log(this.entry);
+      // });
+    }
   }
 }

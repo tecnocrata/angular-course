@@ -25,6 +25,10 @@ const routes: Routes = [
   },
   {
     path: 'blogEntry/:id',
+    component: BlogEntryEditComponent,
+  },
+  {
+    path: 'entry/:id',
     component: BlogEntryComponent,
   },
   // {

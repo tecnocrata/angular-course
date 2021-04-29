@@ -29,4 +29,9 @@ export class BlogEntriesService {
       options
     );
   }
+
+  public deleteEntry(id: string) {
+    console.log(`Deleting record id...${id}`);
+    return this.http.delete(`http://localhost:5100/blog-entries/${id}/`);
+  }
 }

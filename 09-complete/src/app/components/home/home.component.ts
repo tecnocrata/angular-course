@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   public entries$!: Observable<BlogEntry[]>;
   constructor(
     private router: Router,
-    private blogEntries: BlogEntriesService
+    private blogEntriesService: BlogEntriesService
   ) {}
 
   ngOnInit(): void {
@@ -37,11 +37,18 @@ export class HomeComponent implements OnInit, OnDestroy {
     // this.subscriptions.add(subscription);
 
     // Much better method
-    this.entries$ = this.blogEntries.getAllEntries();
+    this.entries$ = this.blogEntriesService.getAllEntries();
   }
 
   public createEntry() {
     this.router.navigate(['/blogEntry/new']);
+  }
+
+  public deleteEntry(id: string) {
+    console.log(`Deleting record ...${id}`);
+    this.blogEntriesService.deleteEntry(id).subscribe(() => {
+      console.log('Deleted');
+    });
   }
 
   ngOnDestroy(): void {
